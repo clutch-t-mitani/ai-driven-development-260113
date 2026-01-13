@@ -1,0 +1,25 @@
+# 11. 開発環境/運用設計
+
+## 開発環境
+- Laravel Sail + Docker
+- MySQL
+- Mail：開発時は Mailpit 等（Sail構成に合わせる）
+
+## 主要コマンド（例）
+- sail up -d
+- sail artisan migrate
+- sail artisan db:seed
+- sail artisan test
+
+## .env（最低限）
+- DB_HOST, DB_DATABASE, DB_USERNAME, DB_PASSWORD
+- MAIL_*（パスワードリセット用）
+- APP_URL
+
+## ログ/監視（MVP）
+- storage/logs/laravel.log を基本
+- 本番はログ集約（将来）
+
+## デプロイ（将来）
+- コンテナ化は維持（本番用Dockerfile/composeは将来整備）
+- APP_KEY、DB、メール、キャッシュの設定を切り替え
